@@ -10,45 +10,45 @@
   
 3、网络配置
 
-	manager:192.168.30.216/24	gateway=192.168.30.254
-	node:		192.168.30.214/24	gateway=192.168.30.254
+  manager:192.168.30.216/24	gateway=192.168.30.254
+  node:		192.168.30.214/24	gateway=192.168.30.254
 	
 4、编辑/etc/hosts解析
 
-	#controller
-	192.168.30.216	manager
-	#computer
-	192.168.30.214	node
+  #controller
+  192.168.30.216	manager
+  #computer
+  192.168.30.214	node
 
 5、root密码
 
-q
+  q
 	
 6、编辑/etc/resolve.conf
 	
-	nameserver 114.114.114.114
+  nameserver 114.114.114.114
 	
 7、配置防火墙、selinux
 	
-	#systemctl	disable	firewalld
-	#systemctl	stop	firewalld
+  #systemctl	disable	firewalld
+  #systemctl	stop	firewalld
 	
-	#setenforce 0
-	#vim /etc/selinux/config
-	SELINUX=disabled
+  #setenforce 0
+  #vim /etc/selinux/config
+  SELINUX=disabled
 	
 二、安装openstack安装包
 
-	1、安装对应版本的epel库
+  1、安装对应版本的epel库
 	
-		#yum install centos-release-openstack-rocky -y
+  #yum install centos-release-openstack-rocky -y
 
-	2、安装openstack客户端
+  2、安装openstack客户端
 		
-		#yum install python-openstackclient -y
+  #yum install python-openstackclient -y
 		
-	3、RHEL和CentOS 默认启用SELinux。安装 openstack-selinux软件包以自动管理OpenStack服务的安全策略
+  3、RHEL和CentOS 默认启用SELinux。安装 openstack-selinux软件包以自动管理OpenStack服务的安全策略
 	
-		#yum install openstack-selinux -y
+  #yum install openstack-selinux -y
 
 	
