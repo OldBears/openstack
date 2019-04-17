@@ -40,15 +40,25 @@
 二、安装openstack安装包
 
   1、安装对应版本的epel库
-	
   #yum install centos-release-openstack-rocky -y
 
-  2、安装openstack客户端
-		
+  2、安装openstack客户端	
   #yum install python-openstackclient -y
-		
-  3、RHEL和CentOS 默认启用SELinux。安装 openstack-selinux软件包以自动管理OpenStack服务的安全策略
 	
+  3、RHEL和CentOS 默认启用SELinux。安装 openstack-selinux软件包以自动管理OpenStack服务的安全策略
   #yum install openstack-selinux -y
 
-	
+三、安装数据库
+
+  1、安装包
+  #yum install mariadb mariadb-server python2-PyMySQL -y
+  
+  2、创建和编辑配置文件/etc/my.cnf.d/openstack.cnf
+  [mysqld]
+  bind-address = 172.16.175.11
+  default-storage-engine = innodb
+  innodb_file_per_table = on
+  max_connections = 4096
+  collation-server = utf8_general_ci
+  character-set-server = utf8
+  
